@@ -122,7 +122,7 @@ const Navbar = ({ user, onLogout }) => {
                                     alt="profile"
                                 />
                                 <div style={styles.userInfo}>
-                                    <span style={styles.userName}>{user.name.split(' ')[0]}</span>
+                                    <span style={styles.userName}>{(user?.name || "User").split(' ')[0]}</span>
                                     <span style={styles.userBadge}>{user.role}</span>
                                 </div>
                             </Link>
