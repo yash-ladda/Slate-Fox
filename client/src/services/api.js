@@ -2,8 +2,10 @@ import axios from "axios";
 import { getToken } from "../utils/auth.js";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL, 
+  baseURL: import.meta.env.VITE_API_BASE_URL, // ✅ yahan comma + closing brace
+});
 
+// ✅ request interceptor
 api.interceptors.request.use(
   (config) => {
     const token = getToken();
@@ -17,6 +19,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
+// ✅ response interceptor
 api.interceptors.response.use(
   (response) => response,
   (error) => {
