@@ -1,5 +1,5 @@
 services:
-  - type: static
+  - type: web
     name: slate-fox-client
     env: static
     buildCommand: cd client && npm install && npm run build
